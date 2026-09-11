@@ -842,4 +842,1782 @@
 
     .input-error-msg {
       font-size: 0.72rem;
-      color: var(--statu
+      color: var(--status-red);
+      margin-top: 2px;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary-light), var(--primary-dark));
+      color: #fff;
+      font-weight: 700;
+      font-size: 0.85rem;
+      padding: 11px 18px;
+      border-radius: var(--radius-md);
+      border: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      box-shadow: 0 4px 12px rgba(16, 185, 129, 0.25);
+      transition: transform var(--transition-fast), filter var(--transition-fast);
+      text-decoration: none;
+    }
+
+    .btn-primary:active {
+      transform: scale(0.98);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--text-secondary);
+      font-weight: 600;
+      font-size: 0.85rem;
+      padding: 10px 16px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-color);
+      cursor: pointer;
+      transition: all var(--transition-fast);
+    }
+    .btn-outline:hover {
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--text-primary);
+    }
+
+    .btn-secondary-sm, .btn-copy-sm {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid var(--border-color);
+      color: var(--text-primary);
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 5px 12px;
+      border-radius: var(--radius-full);
+      cursor: pointer;
+    }
+
+    /* ========================================================
+       8. MODAL MULTI-STEP
+       ======================================================== */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+    }
+
+    .modal-dialog {
+      width: 100%;
+      max-width: 520px;
+      background: var(--bg-card);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: var(--radius-lg);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+      max-height: 90vh;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      animation: modalFadeIn 0.25s ease-out;
+    }
+
+    @keyframes modalFadeIn {
+      from { opacity: 0; transform: scale(0.95) translateY(10px); }
+      to { opacity: 1; transform: scale(1) translateY(0); }
+    }
+
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding: 16px 20px;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .modal-badge {
+      font-size: 0.65rem;
+      font-weight: 800;
+      color: var(--accent);
+      letter-spacing: 0.8px;
+    }
+
+    .modal-title {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: #fff;
+    }
+
+    .modal-close-btn {
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      color: var(--text-muted);
+      cursor: pointer;
+      line-height: 1;
+    }
+
+    .modal-close-btn:hover { color: #fff; }
+
+    .stepper-indicator {
+      display: flex;
+      border-bottom: 1px solid var(--border-color);
+      background: rgba(0, 0, 0, 0.2);
+    }
+
+    .step-item {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 10px 4px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      position: relative;
+    }
+
+    .step-item.active {
+      color: var(--primary-light);
+    }
+
+    .step-item.active::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: var(--primary-light);
+    }
+
+    .step-number {
+      font-size: 0.7rem;
+      opacity: 0.7;
+    }
+
+    #multi-step-form {
+      padding: 16px 20px;
+      overflow-y: auto;
+      flex: 1;
+    }
+
+    .form-step {
+      border: none;
+    }
+
+    .step-legend {
+      font-size: 0.84rem;
+      font-weight: 700;
+      color: var(--text-secondary);
+      margin-bottom: 12px;
+    }
+
+    .review-box {
+      background: rgba(0, 0, 0, 0.25);
+      border-radius: var(--radius-md);
+      padding: 12px;
+      font-size: 0.8rem;
+      margin-bottom: 14px;
+      border: 1px solid var(--border-color);
+    }
+
+    .review-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 4px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    }
+    .review-row:last-child { border-bottom: none; }
+    .review-label { color: var(--text-muted); }
+    .review-val { font-weight: 600; color: #fff; text-align: right; }
+
+    .agreement-box {
+      margin-top: 10px;
+    }
+
+    .checkbox-label {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: 0.75rem;
+      color: var(--text-secondary);
+      cursor: pointer;
+      line-height: 1.35;
+    }
+
+    .modal-actions {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      margin-top: 16px;
+      padding-top: 12px;
+      border-top: 1px solid var(--border-color);
+    }
+
+    /* Success Screen */
+    .success-screen {
+      padding: 24px 20px;
+      text-align: center;
+      overflow-y: auto;
+    }
+
+    .success-icon-anim {
+      font-size: 3rem;
+      margin-bottom: 8px;
+    }
+
+    .success-title {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: #fff;
+    }
+
+    .success-desc {
+      font-size: 0.82rem;
+      color: var(--text-secondary);
+      margin-top: 4px;
+      margin-bottom: 16px;
+    }
+
+    .code-box {
+      background: rgba(16, 185, 129, 0.08);
+      border: 1px dashed var(--primary-light);
+      border-radius: var(--radius-md);
+      padding: 14px;
+      margin-bottom: 14px;
+    }
+
+    .code-label {
+      font-size: 0.68rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      letter-spacing: 0.6px;
+    }
+
+    .code-value {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--primary-light);
+      letter-spacing: 1.5px;
+      margin: 6px 0 10px;
+      font-family: monospace;
+    }
+
+    .btn-copy-code {
+      background: var(--primary-dark);
+      color: #fff;
+      border: none;
+      font-size: 0.76rem;
+      font-weight: 600;
+      padding: 6px 14px;
+      border-radius: var(--radius-full);
+      cursor: pointer;
+    }
+
+    .save-code-warning {
+      font-size: 0.74rem;
+      color: var(--accent);
+      margin-bottom: 20px;
+      line-height: 1.35;
+    }
+
+    .success-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    /* ========================================================
+       9. FLOATING HELP BUTTON
+       ======================================================== */
+    .floating-help-wrapper {
+      position: fixed;
+      bottom: 16px;
+      right: 16px;
+      z-index: 900;
+    }
+
+    .floating-fab {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: linear-gradient(135deg, #25d366, #128c7e);
+      color: #fff;
+      border: none;
+      padding: 10px 16px;
+      border-radius: var(--radius-full);
+      box-shadow: 0 4px 16px rgba(37, 211, 102, 0.35);
+      font-family: inherit;
+      font-weight: 700;
+      font-size: 0.82rem;
+      cursor: pointer;
+      transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+    }
+
+    .floating-fab:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.45);
+    }
+
+    .help-popup {
+      position: absolute;
+      bottom: 54px;
+      right: 0;
+      width: 280px;
+      background: var(--bg-card);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: var(--radius-lg);
+      padding: 14px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      animation: modalFadeIn 0.2s ease-out;
+    }
+
+    .help-popup-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 6px;
+    }
+
+    .help-title {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .help-close-btn {
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      font-size: 1.2rem;
+      cursor: pointer;
+    }
+
+    .help-sub {
+      font-size: 0.72rem;
+      color: var(--text-secondary);
+      margin-bottom: 10px;
+      line-height: 1.3;
+    }
+
+    .help-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .btn-help-wa {
+      background: #25d366;
+      color: #fff;
+      text-decoration: none;
+      font-size: 0.76rem;
+      font-weight: 700;
+      padding: 8px 12px;
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    .btn-help-faq {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-color);
+      color: var(--text-primary);
+      font-size: 0.74rem;
+      font-weight: 600;
+      padding: 7px 12px;
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    .faq-drawer {
+      margin-top: 10px;
+      padding-top: 8px;
+      border-top: 1px solid var(--border-color);
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      max-height: 140px;
+      overflow-y: auto;
+    }
+
+    .faq-item strong {
+      display: block;
+      font-size: 0.72rem;
+      color: var(--text-primary);
+    }
+    .faq-item p {
+      font-size: 0.68rem;
+      color: var(--text-secondary);
+      line-height: 1.25;
+    }
+
+    /* ========================================================
+       10. TOAST NOTIFICATION
+       ======================================================== */
+    .toast-container {
+      position: fixed;
+      top: 16px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2000;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      width: 90%;
+      max-width: 360px;
+      pointer-events: none;
+    }
+
+    .toast {
+      background: #1e293b;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: #fff;
+      padding: 10px 14px;
+      border-radius: var(--radius-md);
+      font-size: 0.8rem;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      animation: toastSlideDown 0.3s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+      pointer-events: auto;
+    }
+
+    .toast.toast-success { border-left: 4px solid var(--status-green); }
+    .toast.toast-warning { border-left: 4px solid var(--status-yellow); }
+    .toast.toast-error { border-left: 4px solid var(--status-red); }
+
+    @keyframes toastSlideDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ========================================================
+       11. FOOTER
+       ======================================================== */
+    .footer {
+      text-align: center;
+      padding: 30px 10px 10px;
+      border-top: 1px solid var(--border-color);
+      margin-top: 30px;
+    }
+
+    .footer-brand {
+      font-size: 1rem;
+      font-weight: 800;
+      color: #fff;
+    }
+
+    .footer-org {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--primary-light);
+      margin-top: 1px;
+    }
+
+    .footer-quote {
+      font-size: 0.74rem;
+      color: var(--text-muted);
+      font-style: italic;
+      margin: 6px 0 12px;
+    }
+
+    .footer-socials {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      font-size: 0.76rem;
+      margin-bottom: 12px;
+    }
+
+    .social-link {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .social-link:hover { color: var(--primary-light); }
+    .dot-sep { color: var(--text-muted); font-size: 0.6rem; }
+
+    .footer-copy {
+      font-size: 0.68rem;
+      color: var(--text-muted);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Background Glow Accents -->
+  <div class="bg-glow bg-glow-top"></div>
+  <div class="bg-glow bg-glow-bottom"></div>
+
+  <!-- Toast Container -->
+  <div id="toast-container" class="toast-container" aria-live="polite"></div>
+
+  <!-- Main App -->
+  <main class="app-container">
+
+    <!-- HEADER SECTION -->
+    <header class="header">
+      <div class="header-badge">OFFICIAL REGISTRATION PORTAL</div>
+      <h1 id="config-title" class="title-main">LAKMUD 4</h1>
+      <h2 id="config-org" class="title-sub">PAC IPNU IPPNU DANDER</h2>
+      <p id="config-tagline" class="tagline">"Ruang Berproses, Bertumbuh, dan Berkhidmat"</p>
+    </header>
+
+    <!-- SLIDESHOW SECTION -->
+    <section class="slideshow-wrapper" aria-label="Foto Kegiatan Lakmud">
+      <div class="slideshow-container" id="slideshow-container">
+        <div class="slide-placeholder" id="slide-placeholder">
+          <div class="slide-placeholder-icon">📸</div>
+          <span>Dokumentasi Kegiatan LAKMUD</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- PORTAL ACTION MENU -->
+    <section class="menu-list" aria-label="Menu Pendaftaran">
+
+      <!-- 1. PERSYARATAN PESERTA (ACCORDION) -->
+      <article class="menu-card accordion-card" id="card-requirements">
+        <button class="menu-btn accordion-toggle" aria-expanded="false" aria-controls="content-requirements">
+          <div class="menu-icon-box">📋</div>
+          <div class="menu-info">
+            <h3 class="menu-title">Persyaratan Peserta</h3>
+            <p class="menu-desc">Pastikan kamu memenuhi ketentuan sebelum mendaftar.</p>
+          </div>
+          <span class="chevron-icon">›</span>
+        </button>
+        <div class="accordion-content" id="content-requirements">
+          <div class="accordion-inner">
+            <ul class="check-list" id="requirements-list">
+              <!-- Auto generated by JS -->
+            </ul>
+            <div class="req-action">
+              <button type="button" class="btn-secondary-sm" id="btn-show-full-req">
+                Lihat Ketentuan Lengkap &amp; Alur
+              </button>
+            </div>
+            <div id="req-poster-box" class="req-poster-box hidden">
+              <p class="poster-note">📌 Silakan cermati pamflet ketentuan teknis:</p>
+              <div class="poster-placeholder">
+                <span>[ Pamflet / Brosur Persyaratan ]</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 2. PENDAFTARAN PESERTA (WAJIB - MODAL MULTI-STEP) -->
+      <article class="menu-card featured-card" id="card-registration">
+        <button class="menu-btn" id="btn-open-reg-modal">
+          <div class="menu-icon-box pulse">📝</div>
+          <div class="menu-info">
+            <div class="title-with-badge">
+              <h3 class="menu-title">Pendaftaran Peserta</h3>
+              <span class="badge-mandatory">WAJIB DIISI</span>
+            </div>
+            <p class="menu-desc">Isi formulir data diri dan delegasi organisasi.</p>
+          </div>
+          <span class="chevron-icon">›</span>
+        </button>
+      </article>
+
+      <!-- 3. PENGIRIMAN BERKAS (WAJIB - ACCORDION SIMULATION) -->
+      <article class="menu-card featured-card accordion-card" id="card-upload">
+        <button class="menu-btn accordion-toggle" aria-expanded="false" aria-controls="content-upload">
+          <div class="menu-icon-box">📎</div>
+          <div class="menu-info">
+            <div class="title-with-badge">
+              <h3 class="menu-title">Pengiriman Berkas</h3>
+              <span class="badge-mandatory">WAJIB DIISI</span>
+            </div>
+            <p class="menu-desc">Kirim berkas yang diperlukan untuk verifikasi data.</p>
+          </div>
+          <span class="chevron-icon">›</span>
+        </button>
+        <div class="accordion-content" id="content-upload">
+          <div class="accordion-inner">
+            <form id="file-upload-form" class="upload-form">
+              <div class="input-group">
+                <label for="upload-reg-code">Kode Pendaftaran Peserta <span class="req-mark">*</span></label>
+                <input type="text" id="upload-reg-code" placeholder="Contoh: LM4-DND-7K29X" class="form-input text-uppercase" />
+                <span class="field-hint">Masukkan kode unik yang didapat setelah mengisi formulir.</span>
+              </div>
+
+              <div class="upload-dropzone" id="upload-dropzone">
+                <input type="file" id="file-input" class="file-input-hidden" accept=".pdf,.zip,.rar,.jpg,.jpeg,.png" />
+                <div class="dropzone-body">
+                  <div class="upload-icon">📂</div>
+                  <p class="upload-main-text">Klik atau seret berkas ke area ini</p>
+                  <p class="upload-sub-text">Format: PDF, ZIP, RAR, atau JPG/PNG (Maks. 5 MB)</p>
+                  <button type="button" class="btn-browse" id="btn-browse-file">Pilih File</button>
+                </div>
+              </div>
+
+              <div id="file-selected-info" class="file-selected-info hidden">
+                <div class="file-meta">
+                  <span class="file-icon">📄</span>
+                  <div class="file-texts">
+                    <span id="file-name-display" class="file-name">nama-file.pdf</span>
+                    <span id="file-size-display" class="file-size">0 KB</span>
+                  </div>
+                </div>
+                <button type="button" id="btn-remove-file" class="btn-remove-file" title="Hapus berkas">✕</button>
+              </div>
+
+              <div class="info-alert">
+                <span>ℹ️</span>
+                <p>Berkas wajib: Surat Rekomendasi PR/PK, Sertifikat MAKESTA, dan Pas Foto Formal 3x4.</p>
+              </div>
+
+              <button type="submit" class="btn-primary w-100" id="btn-submit-upload">
+                Kirim Berkas Pendaftaran
+              </button>
+            </form>
+          </div>
+        </div>
+      </article>
+
+      <!-- 4. TOR LAKMUD (DIRECT DOWNLOAD) -->
+      <article class="menu-card download-card" id="card-tor">
+        <a id="tor-download-link" href="assets/documents/TOR-LAKMUD-IV-PAC-IPNU-IPPNU-DANDER.pdf" download="TOR-LAKMUD-IV-PAC-IPNU-IPPNU-DANDER.pdf" class="menu-btn link-btn">
+          <div class="menu-icon-box">📄</div>
+          <div class="menu-info">
+            <h3 class="menu-title">TOR LAKMUD IV</h3>
+            <p class="menu-desc">Download Term of Reference (Petunjuk Teknis Acara).</p>
+          </div>
+          <span class="download-icon">⬇</span>
+        </a>
+      </article>
+
+      <!-- 5. ADMINISTRASI (ACCORDION) -->
+      <article class="menu-card accordion-card" id="card-admin">
+        <button class="menu-btn accordion-toggle" aria-expanded="false" aria-controls="content-admin">
+          <div class="menu-icon-box">💳</div>
+          <div class="menu-info">
+            <h3 class="menu-title">Administrasi &amp; Infaq</h3>
+            <p class="menu-desc">Informasi biaya investasi &amp; metode pembayaran resmi.</p>
+          </div>
+          <span class="chevron-icon">›</span>
+        </button>
+        <div class="accordion-content" id="content-admin">
+          <div class="accordion-inner">
+            <div class="fee-card">
+              <span class="fee-label">Biaya Investasi Peserta</span>
+              <span class="fee-value" id="admin-fee-value">Rp 0</span>
+            </div>
+
+            <div class="payment-methods">
+              <h4 class="section-subtitle">Metode Pembayaran</h4>
+              
+              <div class="qris-card">
+                <div class="qris-header">
+                  <span class="qris-tag">QRIS ALL PAYMENT</span>
+                  <span class="qris-sub">Gopay, OVO, Dana, ShopeePay, Mobile Banking</span>
+                </div>
+                <div class="qris-box-placeholder">
+                  <div class="qris-qr-mock">
+                    <div class="qr-pattern"></div>
+                    <span class="qr-text">QRIS RESMI PANITIA</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="bank-card">
+                <div class="bank-row">
+                  <span class="bank-name" id="admin-bank-name">BANK TRANSFER</span>
+                  <button class="btn-copy-sm" id="btn-copy-rekening" title="Salin Nomor Rekening">Salin Rekening</button>
+                </div>
+                <div class="bank-number" id="admin-bank-account">XXXXXXXXXX</div>
+                <div class="bank-holder">a.n. <strong id="admin-bank-holder">Panitia LAKMUD IV</strong></div>
+              </div>
+            </div>
+
+            <p class="admin-notice">
+              ⚠️ <em>Pastikan melakukan konfirmasi atau simpan bukti transfer untuk verifikasi administrasi online.</em>
+            </p>
+          </div>
+        </div>
+      </article>
+
+      <!-- 6. LOKASI LAKMUD (ACCORDION WITH MAP) -->
+      <article class="menu-card accordion-card" id="card-location">
+        <button class="menu-btn accordion-toggle" aria-expanded="false" aria-controls="content-location">
+          <div class="menu-icon-box">📍</div>
+          <div class="menu-info">
+            <h3 class="menu-title">Lokasi Kegiatan</h3>
+            <p class="menu-desc">Titik temu dan lokasi penyelenggaraan LAKMUD.</p>
+          </div>
+          <span class="chevron-icon">›</span>
+        </button>
+        <div class="accordion-content" id="content-location">
+          <div class="accordion-inner">
+            <div class="location-details">
+              <h4 class="location-name" id="location-name-display">Gedung Pelatihan</h4>
+              <p class="location-address" id="location-address-display">Kecamatan Dander, Kabupaten Bojonegoro</p>
+            </div>
+
+            <div class="mini-map-frame">
+              <iframe 
+                id="osm-map-iframe"
+                title="Mini Map Lokasi Lakmud"
+                src="https://www.openstreetmap.org/export/embed.html?bbox=111.83%2C-7.30%2C111.90%2C-7.22&amp;layer=mapnik" 
+                loading="lazy">
+              </iframe>
+            </div>
+
+            <div class="map-action">
+              <a href="#" id="btn-open-gmaps" target="_blank" rel="noopener noreferrer" class="btn-primary w-100 flex-center">
+                🗺️ Buka di Google Maps
+              </a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 7. CEK DATAMU (SEARCH & VERIFICATION STATUS) -->
+      <article class="menu-card accordion-card" id="card-check">
+        <button class="menu-btn accordion-toggle" aria-expanded="false" aria-controls="content-check">
+          <div class="menu-icon-box">🔎</div>
+          <div class="menu-info">
+            <h3 class="menu-title">Cek Datamu</h3>
+            <p class="menu-desc">Pantau status pendaftaran, berkas, dan verifikasimu.</p>
+          </div>
+          <span class="chevron-icon">›</span>
+        </button>
+        <div class="accordion-content" id="content-check">
+          <div class="accordion-inner">
+            
+            <div class="search-tabs">
+              <button class="tab-btn active" id="tab-btn-code">Gunakan Kode</button>
+              <button class="tab-btn" id="tab-btn-wa">Lupa Kode (WA &amp; Tgl Lahir)</button>
+            </div>
+
+            <!-- Form Cari by Kode -->
+            <form id="form-check-code" class="check-form">
+              <div class="input-group">
+                <label for="input-search-code">Kode Pendaftaran</label>
+                <input type="text" id="input-search-code" placeholder="Contoh: LM4-DND-7K29X" class="form-input text-uppercase" required />
+              </div>
+              <button type="submit" class="btn-primary w-100">Periksa Data</button>
+            </form>
+
+            <!-- Form Cari by WA & Tgl Lahir -->
+            <form id="form-check-wa" class="check-form hidden">
+              <div class="input-group">
+                <label for="input-search-wa">Nomor WhatsApp Terdaftar</label>
+                <input type="tel" id="input-search-wa" placeholder="08xxxxxxxxxx" class="form-input" />
+              </div>
+              <div class="input-group">
+                <label for="input-search-dob">Tanggal Lahir</label>
+                <input type="date" id="input-search-dob" class="form-input" />
+              </div>
+              <button type="submit" class="btn-primary w-100">Cari Data Saya</button>
+            </form>
+
+            <!-- Hasil Pencarian -->
+            <div id="check-result-box" class="check-result-box hidden"></div>
+
+          </div>
+        </div>
+      </article>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="footer-brand">LAKMUD 4</div>
+      <div class="footer-org">PAC IPNU IPPNU DANDER</div>
+      <p class="footer-quote">"Ruang Berproses, Bertumbuh, dan Berkhidmat"</p>
+      
+      <div class="footer-socials">
+        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-link" id="footer-ig">Instagram</a>
+        <span class="dot-sep">•</span>
+        <a href="#" class="social-link" id="footer-wa">WhatsApp</a>
+      </div>
+      
+      <div class="footer-copy">
+        &copy; Panitia Pelaksana LAKMUD IV PAC IPNU IPPNU Dander. All rights reserved.
+      </div>
+    </footer>
+
+  </main>
+
+  <!-- ======================================================== -->
+  <!-- MODAL MULTI-STEP PENDAFTARAN -->
+  <!-- ======================================================== -->
+  <div class="modal-overlay hidden" id="registration-modal" role="dialog" aria-modal="true" aria-labelledby="modal-reg-title">
+    <div class="modal-dialog">
+      
+      <div class="modal-header">
+        <div>
+          <span class="modal-badge">FORMULIR PENDAFTARAN</span>
+          <h3 id="modal-reg-title" class="modal-title">LAKMUD IV PAC DANDER</h3>
+        </div>
+        <button class="modal-close-btn" id="btn-close-modal" aria-label="Tutup Formulir">&times;</button>
+      </div>
+
+      <div class="stepper-indicator">
+        <div class="step-item active" id="step-ind-1">
+          <span class="step-number">01</span>
+          <span class="step-text">Data Diri</span>
+        </div>
+        <div class="step-item" id="step-ind-2">
+          <span class="step-number">02</span>
+          <span class="step-text">Organisasi</span>
+        </div>
+        <div class="step-item" id="step-ind-3">
+          <span class="step-number">03</span>
+          <span class="step-text">Konfirmasi</span>
+        </div>
+      </div>
+
+      <form id="multi-step-form" novalidate>
+
+        <!-- STEP 1: DATA DIRI -->
+        <fieldset class="form-step" id="form-step-1">
+          <legend class="step-legend">Langkah 1: Identitas Pribadi</legend>
+          
+          <div class="input-group">
+            <label for="reg-fullname">Nama Lengkap <span class="req-mark">*</span></label>
+            <input type="text" id="reg-fullname" class="form-input" placeholder="Masukkan nama lengkap sesuai KTP/KTA" required />
+            <span class="input-error-msg" id="err-fullname"></span>
+          </div>
+
+          <div class="input-group">
+            <label for="reg-whatsapp">Nomor WhatsApp Aktif <span class="req-mark">*</span></label>
+            <input type="tel" id="reg-whatsapp" class="form-input" placeholder="08xxxxxxxxxx" required />
+            <span class="input-error-msg" id="err-whatsapp"></span>
+          </div>
+
+          <div class="form-row">
+            <div class="input-group">
+              <label for="reg-pob">Tempat Lahir <span class="req-mark">*</span></label>
+              <input type="text" id="reg-pob" class="form-input" placeholder="Kota / Kab" required />
+              <span class="input-error-msg" id="err-pob"></span>
+            </div>
+            <div class="input-group">
+              <label for="reg-dob">Tanggal Lahir <span class="req-mark">*</span></label>
+              <input type="date" id="reg-dob" class="form-input" required />
+              <span class="input-error-msg" id="err-dob"></span>
+            </div>
+          </div>
+
+          <div class="input-group">
+            <label>Jenis Kelamin <span class="req-mark">*</span></label>
+            <div class="radio-pill-group">
+              <label class="radio-pill">
+                <input type="radio" name="reg-gender" value="Laki-laki (Rekan)" checked />
+                <span>Rekan (Laki-laki)</span>
+              </label>
+              <label class="radio-pill">
+                <input type="radio" name="reg-gender" value="Perempuan (Rekanita)" />
+                <span>Rekanita (Perempuan)</span>
+              </label>
+            </div>
+          </div>
+        </fieldset>
+
+        <!-- STEP 2: ORGANISASI -->
+        <fieldset class="form-step hidden" id="form-step-2">
+          <legend class="step-legend">Langkah 2: Asal Delegasi &amp; Domisili</legend>
+          
+          <div class="input-group">
+            <label for="reg-school">Asal Sekolah / Kampus / Instansi <span class="req-mark">*</span></label>
+            <input type="text" id="reg-school" class="form-input" placeholder="Nama sekolah/kampus" required />
+            <span class="input-error-msg" id="err-school"></span>
+          </div>
+
+          <div class="input-group">
+            <label for="reg-grade">Tingkat / Kelas / Semester</label>
+            <input type="text" id="reg-grade" class="form-input" placeholder="Contoh: Kelas XI / Semester 3" />
+          </div>
+
+          <div class="input-group">
+            <label for="reg-branch">Asal PR / PK / PAC <span class="req-mark">*</span></label>
+            <input type="text" id="reg-branch" class="form-input" placeholder="Contoh: PR IPNU IPPNU Dander" required />
+            <span class="input-error-msg" id="err-branch"></span>
+          </div>
+
+          <div class="input-group">
+            <label for="reg-address">Alamat Domisili <span class="req-mark">*</span></label>
+            <textarea id="reg-address" class="form-input" rows="2" placeholder="Nama Desa, RT/RW, Kecamatan" required></textarea>
+            <span class="input-error-msg" id="err-address"></span>
+          </div>
+        </fieldset>
+
+        <!-- STEP 3: KONFIRMASI -->
+        <fieldset class="form-step hidden" id="form-step-3">
+          <legend class="step-legend">Langkah 3: Periksa Kembali Data Kamu</legend>
+          
+          <div class="review-box" id="review-summary-content"></div>
+
+          <div class="agreement-box">
+            <label class="checkbox-label">
+              <input type="checkbox" id="reg-agree" required />
+              <span>Saya menyatakan data di atas adalah benar dan siap mengikuti seluruh rangkaian LAKMUD IV.</span>
+            </label>
+            <span class="input-error-msg" id="err-agree"></span>
+          </div>
+        </fieldset>
+
+        <div class="modal-actions">
+          <button type="button" class="btn-outline" id="btn-step-prev" style="display: none;">Kembali</button>
+          <button type="button" class="btn-primary" id="btn-step-next">Lanjut</button>
+          <button type="submit" class="btn-primary hidden" id="btn-step-submit">Kirim Pendaftaran</button>
+        </div>
+
+      </form>
+
+      <!-- SUCCESS SCREEN -->
+      <div id="modal-success-screen" class="success-screen hidden">
+        <div class="success-icon-anim">🎉</div>
+        <h3 class="success-title">Pendaftaran Berhasil!</h3>
+        <p class="success-desc">Data pendaftaran kamu telah berhasil disimpan oleh sistem.</p>
+        
+        <div class="code-box">
+          <span class="code-label">KODE PENDAFTARAN KAMU</span>
+          <div class="code-value" id="generated-reg-code">LM4-DND-XXXXX</div>
+          <button class="btn-copy-code" id="btn-copy-generated-code">
+            📋 Salin Kode Pendaftaran
+          </button>
+        </div>
+
+        <p class="save-code-warning">
+          ⚠️ <strong>PENTING:</strong> Simpan kode ini baik-baik untuk keperluan upload berkas dan cek status pendaftaran.
+        </p>
+
+        <div class="success-actions">
+          <button type="button" class="btn-primary w-100" id="btn-success-check-status">
+            Cek Status Pendaftaran Saya
+          </button>
+          <button type="button" class="btn-outline w-100" id="btn-success-close">
+            Tutup
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ======================================================== -->
+  <!-- FLOATING HELP WIDGET -->
+  <!-- ======================================================== -->
+  <div class="floating-help-wrapper">
+    <div class="help-popup hidden" id="help-popup" role="dialog" aria-labelledby="help-title">
+      <div class="help-popup-header">
+        <h4 id="help-title" class="help-title">Butuh Bantuan?</h4>
+        <button class="help-close-btn" id="btn-close-help" aria-label="Tutup Bantuan">&times;</button>
+      </div>
+      <p class="help-sub">Ada kendala teknis atau pertanyaan seputar LAKMUD IV? Hubungi panitia:</p>
+      
+      <div class="help-actions">
+        <a href="#" id="link-whatsapp-cs" target="_blank" rel="noopener noreferrer" class="btn-help-wa">
+          <span class="wa-icon">💬</span> WhatsApp CS Panitia
+        </a>
+        <button type="button" class="btn-help-faq" id="btn-open-faq-info">
+          <span>❓</span> Pertanyaan Umum (FAQ)
+        </button>
+      </div>
+      
+      <div id="faq-content-drawer" class="faq-drawer hidden">
+        <div class="faq-item">
+          <strong>Bagaimana jika belum MAKESTA?</strong>
+          <p>Syarat utama Lakmud adalah telah lulus MAKESTA dibuktikan dengan sertifikat atau surat rekomendasi.</p>
+        </div>
+        <div class="faq-item">
+          <strong>Kapan pengumuman lolos berkas?</strong>
+          <p>Status kelolosan dapat dipantau secara berkala pada menu "Cek Datamu".</p>
+        </div>
+      </div>
+    </div>
+
+    <button class="floating-fab" id="btn-toggle-help" aria-label="Bantuan Pendaftaran" aria-expanded="false">
+      <span class="fab-icon">💬</span>
+      <span class="fab-label">Bantuan</span>
+    </button>
+  </div>
+
+  <!-- ======================================================== -->
+  <!-- VANILLA JAVASCRIPT LOGIC -->
+  <!-- ======================================================== -->
+  <script>
+    /**
+     * 1. CONFIGURATION OBJECT
+     * Ubah variabel di sini untuk konfigurasi tanpa menyentuh DOM logic
+     */
+    const LAKMUD_CONFIG = {
+      title: "LAKMUD 4",
+      organization: "PAC IPNU IPPNU DANDER",
+      tagline: '"Ruang Berproses, Bertumbuh, dan Berkhidmat"',
+      
+      whatsappNumber: "6285700000000",
+      whatsappDefaultMsg: "Halo Panitia LAKMUD IV PAC Dander, saya ingin bertanya terkait pendaftaran.",
+      
+      torFile: "assets/documents/TOR-LAKMUD-IV-PAC-IPNU-IPPNU-DANDER.pdf",
+      
+      location: {
+        name: "Gedung MWC NU Dander",
+        address: "Jl. Raya Dander No. 45, Kec. Dander, Kabupaten Bojonegoro, Jawa Timur",
+        latitude: -7.2625,
+        longitude: 111.8683,
+        mapsUrl: "https://maps.google.com/?q=Dander+Bojonegoro"
+      },
+      
+      administration: {
+        fee: "Rp 35.000",
+        bankName: "BANK BRI",
+        accountNumber: "6123-01-012345-53-1",
+        accountHolder: "PAC IPNU IPPNU DANDER"
+      },
+      
+      requirements: [
+        "Anggota aktif IPNU / IPPNU yang telah lulus jenjang MAKESTA.",
+        "Mendapatkan surat mandat/rekomendasi dari Pimpinan Ranting (PR) / Komisariat (PK).",
+        "Berusia maksimal 23 tahun pada saat pelaksanaan LAKMUD IV.",
+        "Mengisi formulir pendaftaran online secara lengkap dan valid.",
+        "Mengunggah berkas administrasi dan pas foto formal 3x4.",
+        "Siap mengikuti seluruh rangkaian acara dari awal hingga akhir."
+      ],
+      
+      photos: [
+        "assets/images/foto-1.jpg",
+        "assets/images/foto-2.jpg",
+        "assets/images/foto-3.jpg",
+        "assets/images/foto-4.jpg",
+        "assets/images/foto-5.jpg"
+      ],
+
+      instagramUrl: "https://instagram.com/pac_ipnu_ippnu_dander"
+    };
+
+    /**
+     * 2. INITIAL DUMMY PARTICIPANT DATA
+     */
+    const INITIAL_DUMMY_DATABASE = [
+      {
+        registrationCode: "LM4-DND-7K29X",
+        name: "Ahmad Fauzi",
+        whatsapp: "081234567890",
+        dob: "2004-05-14",
+        school: "SMA Negeri 1 Dander",
+        branch: "PR IPNU Dander",
+        isRegistered: true,
+        isFileUploaded: true,
+        paymentStatus: "verified",
+        participantStatus: "verified"
+      },
+      {
+        registrationCode: "LM4-DND-3M88Q",
+        name: "Siti Nur Haliza",
+        whatsapp: "085678901234",
+        dob: "2005-08-20",
+        school: "MA Al-Falah",
+        branch: "PR IPPNU Ngumpakdalem",
+        isRegistered: true,
+        isFileUploaded: true,
+        paymentStatus: "pending",
+        participantStatus: "pending"
+      },
+      {
+        registrationCode: "LM4-DND-9X11Z",
+        name: "Muhammad Rizky",
+        whatsapp: "087890123456",
+        dob: "2006-02-10",
+        school: "SMK Taruna Dander",
+        branch: "PK IPNU SMK Taruna",
+        isRegistered: true,
+        isFileUploaded: false,
+        paymentStatus: "pending",
+        participantStatus: "need_fix"
+      }
+    ];
+
+    /* ====================================================================
+       3. HELPER UTILITIES
+       ==================================================================== */
+    function getDatabase() {
+      const localData = localStorage.getItem("lakmud_participants");
+      if (!localData) {
+        localStorage.setItem("lakmud_participants", JSON.stringify(INITIAL_DUMMY_DATABASE));
+        return INITIAL_DUMMY_DATABASE;
+      }
+      try {
+        return JSON.parse(localData);
+      } catch (e) {
+        return INITIAL_DUMMY_DATABASE;
+      }
+    }
+
+    function saveParticipantToStorage(participant) {
+      const currentDb = getDatabase();
+      currentDb.unshift(participant);
+      localStorage.setItem("lakmud_participants", JSON.stringify(currentDb));
+    }
+
+    function generateUniqueRegCode() {
+      const chars = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
+      let randomStr = "";
+      for (let i = 0; i < 5; i++) {
+        randomStr += chars.charAt(Math.floor(Math.random() * chars.length));
+      }
+      return `LM4-DND-${randomStr}`;
+    }
+
+    function showToast(message, type = "success") {
+      const container = document.getElementById("toast-container");
+      if (!container) return;
+
+      const toast = document.createElement("div");
+      toast.className = `toast toast-${type}`;
+      
+      let icon = "✓";
+      if (type === "warning") icon = "⚠️";
+      if (type === "error") icon = "✕";
+
+      toast.innerHTML = `<span>${icon}</span> <span>${message}</span>`;
+      container.appendChild(toast);
+
+      setTimeout(() => {
+        toast.style.opacity = "0";
+        toast.style.transition = "opacity 0.3s ease";
+        setTimeout(() => toast.remove(), 300);
+      }, 3500);
+    }
+
+    async function copyToClipboard(text, successMessage = "Teks berhasil disalin!") {
+      try {
+        if (navigator.clipboard && window.isSecureContext) {
+          await navigator.clipboard.writeText(text);
+        } else {
+          const tempInput = document.createElement("input");
+          tempInput.value = text;
+          document.body.appendChild(tempInput);
+          tempInput.select();
+          document.execCommand("copy");
+          document.body.removeChild(tempInput);
+        }
+        showToast(successMessage, "success");
+      } catch (err) {
+        showToast("Gagal menyalin otomatis. Silakan salin manual.", "warning");
+      }
+    }
+
+    /* ====================================================================
+       4. DOM INITIALIZATION
+       ==================================================================== */
+    document.addEventListener("DOMContentLoaded", () => {
+      document.getElementById("config-title").textContent = LAKMUD_CONFIG.title;
+      document.getElementById("config-org").textContent = LAKMUD_CONFIG.organization;
+      document.getElementById("config-tagline").textContent = LAKMUD_CONFIG.tagline;
+      document.getElementById("tor-download-link").setAttribute("href", LAKMUD_CONFIG.torFile);
+      
+      document.getElementById("admin-fee-value").textContent = LAKMUD_CONFIG.administration.fee;
+      document.getElementById("admin-bank-name").textContent = LAKMUD_CONFIG.administration.bankName;
+      document.getElementById("admin-bank-account").textContent = LAKMUD_CONFIG.administration.accountNumber;
+      document.getElementById("admin-bank-holder").textContent = LAKMUD_CONFIG.administration.accountHolder;
+
+      document.getElementById("location-name-display").textContent = LAKMUD_CONFIG.location.name;
+      document.getElementById("location-address-display").textContent = LAKMUD_CONFIG.location.address;
+      document.getElementById("btn-open-gmaps").setAttribute("href", LAKMUD_CONFIG.location.mapsUrl);
+
+      const reqListEl = document.getElementById("requirements-list");
+      reqListEl.innerHTML = LAKMUD_CONFIG.requirements
+        .map(req => `<li><span class="check-icon">✓</span> <span>${req}</span></li>`)
+        .join("");
+
+      const encodedWaMsg = encodeURIComponent(LAKMUD_CONFIG.whatsappDefaultMsg);
+      const waUrl = `https://wa.me/${LAKMUD_CONFIG.whatsappNumber}?text=${encodedWaMsg}`;
+      document.getElementById("link-whatsapp-cs").setAttribute("href", waUrl);
+      document.getElementById("footer-wa").setAttribute("href", waUrl);
+      document.getElementById("footer-ig").setAttribute("href", LAKMUD_CONFIG.instagramUrl);
+
+      document.getElementById("btn-copy-rekening").addEventListener("click", () => {
+        copyToClipboard(LAKMUD_CONFIG.administration.accountNumber, "Nomor rekening berhasil disalin!");
+      });
+
+      const btnShowReq = document.getElementById("btn-show-full-req");
+      const posterBox = document.getElementById("req-poster-box");
+      btnShowReq.addEventListener("click", () => {
+        posterBox.classList.toggle("hidden");
+        btnShowReq.textContent = posterBox.classList.contains("hidden") 
+          ? "Lihat Ketentuan Lengkap & Alur" 
+          : "Sembunyikan Pamflet";
+      });
+
+      initSlideshow();
+      initAccordions();
+      initRegistrationModal();
+      initFileUploadModule();
+      initCheckDataModule();
+      initFloatingHelp();
+    });
+
+    /* ====================================================================
+       5. SLIDESHOW MODULE
+       ==================================================================== */
+    function initSlideshow() {
+      const container = document.getElementById("slideshow-container");
+      const photos = LAKMUD_CONFIG.photos;
+      if (!photos || photos.length === 0) return;
+
+      const imagesElements = [];
+
+      photos.forEach((src, idx) => {
+        const img = document.createElement("img");
+        img.src = src;
+        img.alt = `Dokumentasi LAKMUD PAC Dander ${idx + 1}`;
+        img.className = `slide-img ${idx === 0 ? "active" : ""}`;
+
+        img.onload = () => {
+          const placeholder = document.getElementById("slide-placeholder");
+          if (placeholder) placeholder.style.display = "none";
+        };
+
+        img.onerror = () => {
+          // Fallback image Unsplash jika foto lokal belum ada
+          img.src = "https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=600&auto=format&fit=crop&q=80";
+        };
+
+        container.appendChild(img);
+        imagesElements.push(img);
+      });
+
+      let currentIndex = 0;
+      setInterval(() => {
+        if (imagesElements.length <= 1) return;
+        imagesElements[currentIndex].classList.remove("active");
+        currentIndex = (currentIndex + 1) % imagesElements.length;
+        imagesElements[currentIndex].classList.add("active");
+      }, 4500);
+    }
+
+    /* ====================================================================
+       6. ACCORDION HANDLER
+       ==================================================================== */
+    function initAccordions() {
+      const toggles = document.querySelectorAll(".accordion-toggle");
+
+      toggles.forEach(btn => {
+        btn.addEventListener("click", () => {
+          const card = btn.closest(".accordion-card");
+          const content = card.querySelector(".accordion-content");
+          const isOpen = card.classList.contains("open");
+
+          document.querySelectorAll(".accordion-card.open").forEach(openCard => {
+            if (openCard !== card) {
+              openCard.classList.remove("open");
+              openCard.querySelector(".accordion-toggle").setAttribute("aria-expanded", "false");
+              openCard.querySelector(".accordion-content").style.maxHeight = null;
+            }
+          });
+
+          if (isOpen) {
+            card.classList.remove("open");
+            btn.setAttribute("aria-expanded", "false");
+            content.style.maxHeight = null;
+          } else {
+            card.classList.add("open");
+            btn.setAttribute("aria-expanded", "true");
+            content.style.maxHeight = content.scrollHeight + "px";
+          }
+        });
+      });
+    }
+
+    /* ====================================================================
+       7. MULTI-STEP REGISTRATION FORM
+       ==================================================================== */
+    function initRegistrationModal() {
+      const modal = document.getElementById("registration-modal");
+      const btnOpenModal = document.getElementById("btn-open-reg-modal");
+      const btnCloseModal = document.getElementById("btn-close-modal");
+      
+      const step1 = document.getElementById("form-step-1");
+      const step2 = document.getElementById("form-step-2");
+      const step3 = document.getElementById("form-step-3");
+      const successScreen = document.getElementById("modal-success-screen");
+      const multiForm = document.getElementById("multi-step-form");
+
+      const btnPrev = document.getElementById("btn-step-prev");
+      const btnNext = document.getElementById("btn-step-next");
+      const btnSubmit = document.getElementById("btn-step-submit");
+
+      const ind1 = document.getElementById("step-ind-1");
+      const ind2 = document.getElementById("step-ind-2");
+      const ind3 = document.getElementById("step-ind-3");
+
+      let currentStep = 1;
+      let formDataDraft = {};
+
+      btnOpenModal.addEventListener("click", () => {
+        modal.classList.remove("hidden");
+        document.body.style.overflow = "hidden";
+      });
+
+      const closeModal = () => {
+        modal.classList.add("hidden");
+        document.body.style.overflow = "";
+      };
+
+      btnCloseModal.addEventListener("click", closeModal);
+      document.getElementById("btn-success-close").addEventListener("click", () => {
+        closeModal();
+        resetRegistrationForm();
+      });
+
+      function updateStepUI() {
+        [step1, step2, step3].forEach((s, idx) => {
+          s.classList.toggle("hidden", idx + 1 !== currentStep);
+        });
+
+        [ind1, ind2, ind3].forEach((ind, idx) => {
+          ind.classList.toggle("active", idx + 1 <= currentStep);
+        });
+
+        btnPrev.style.display = currentStep > 1 ? "block" : "none";
+
+        if (currentStep === 3) {
+          btnNext.classList.add("hidden");
+          btnSubmit.classList.remove("hidden");
+          renderReviewSummary();
+        } else {
+          btnNext.classList.remove("hidden");
+          btnSubmit.classList.add("hidden");
+        }
+      }
+
+      function validateStep1() {
+        let isValid = true;
+        const fullname = document.getElementById("reg-fullname").value.trim();
+        const whatsapp = document.getElementById("reg-whatsapp").value.trim();
+        const pob = document.getElementById("reg-pob").value.trim();
+        const dob = document.getElementById("reg-dob").value;
+
+        const errFullname = document.getElementById("err-fullname");
+        const errWhatsapp = document.getElementById("err-whatsapp");
+        const errPob = document.getElementById("err-pob");
+        const errDob = document.getElementById("err-dob");
+
+        [errFullname, errWhatsapp, errPob, errDob].forEach(e => e.textContent = "");
+
+        if (!fullname) {
+          errFullname.textContent = "Nama lengkap wajib diisi.";
+          isValid = false;
+        }
+
+        if (!whatsapp) {
+          errWhatsapp.textContent = "Nomor WhatsApp aktif wajib diisi.";
+          isValid = false;
+        } else if (whatsapp.length < 9 || !/^08[0-9]+$/.test(whatsapp)) {
+          errWhatsapp.textContent = "Gunakan nomor WhatsApp yang valid (awalan 08...).";
+          isValid = false;
+        }
+
+        if (!pob) {
+          errPob.textContent = "Tempat lahir wajib diisi.";
+          isValid = false;
+        }
+
+        if (!dob) {
+          errDob.textContent = "Tanggal lahir wajib dipilih.";
+          isValid = false;
+        }
+
+        if (isValid) {
+          const gender = document.querySelector('input[name="reg-gender"]:checked').value;
+          formDataDraft = { ...formDataDraft, fullname, whatsapp, pob, dob, gender };
+        }
+        return isValid;
+      }
+
+      function validateStep2() {
+        let isValid = true;
+        const school = document.getElementById("reg-school").value.trim();
+        const grade = document.getElementById("reg-grade").value.trim();
+        const branch = document.getElementById("reg-branch").value.trim();
+        const address = document.getElementById("reg-address").value.trim();
+
+        const errSchool = document.getElementById("err-school");
+        const errBranch = document.getElementById("err-branch");
+        const errAddress = document.getElementById("err-address");
+
+        [errSchool, errBranch, errAddress].forEach(e => e.textContent = "");
+
+        if (!school) {
+          errSchool.textContent = "Asal sekolah/kampus wajib diisi.";
+          isValid = false;
+        }
+        if (!branch) {
+          errBranch.textContent = "Asal delegasi ranting/komisariat wajib diisi.";
+          isValid = false;
+        }
+        if (!address) {
+          errAddress.textContent = "Alamat domisili wajib diisi.";
+          isValid = false;
+        }
+
+        if (isValid) {
+          formDataDraft = { ...formDataDraft, school, grade: grade || "-", branch, address };
+        }
+        return isValid;
+      }
+
+      function renderReviewSummary() {
+        const summaryBox = document.getElementById("review-summary-content");
+        summaryBox.innerHTML = `
+          <div class="review-row"><span class="review-label">Nama:</span> <span class="review-val">${formDataDraft.fullname}</span></div>
+          <div class="review-row"><span class="review-label">WhatsApp:</span> <span class="review-val">${formDataDraft.whatsapp}</span></div>
+          <div class="review-row"><span class="review-label">TTL:</span> <span class="review-val">${formDataDraft.pob}, ${formDataDraft.dob}</span></div>
+          <div class="review-row"><span class="review-label">Kategori:</span> <span class="review-val">${formDataDraft.gender}</span></div>
+          <div class="review-row"><span class="review-label">Sekolah/Kampus:</span> <span class="review-val">${formDataDraft.school} (${formDataDraft.grade})</span></div>
+          <div class="review-row"><span class="review-label">Delegasi:</span> <span class="review-val">${formDataDraft.branch}</span></div>
+          <div class="review-row"><span class="review-label">Alamat:</span> <span class="review-val">${formDataDraft.address}</span></div>
+        `;
+      }
+
+      btnNext.addEventListener("click", () => {
+        if (currentStep === 1 && validateStep1()) {
+          currentStep = 2;
+          updateStepUI();
+        } else if (currentStep === 2 && validateStep2()) {
+          currentStep = 3;
+          updateStepUI();
+        }
+      });
+
+      btnPrev.addEventListener("click", () => {
+        if (currentStep > 1) {
+          currentStep--;
+          updateStepUI();
+        }
+      });
+
+      multiForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const agreeCheck = document.getElementById("reg-agree");
+        const errAgree = document.getElementById("err-agree");
+
+        if (!agreeCheck.checked) {
+          errAgree.textContent = "Kamu harus menyetujui pernyataan ini untuk lanjut.";
+          return;
+        }
+        errAgree.textContent = "";
+
+        const newRegCode = generateUniqueRegCode();
+
+        /* Integrasi Backend: kirim newParticipant via fetch() POST */
+        const newParticipant = {
+          registrationCode: newRegCode,
+          name: formDataDraft.fullname,
+          whatsapp: formDataDraft.whatsapp,
+          dob: formDataDraft.dob,
+          school: formDataDraft.school,
+          branch: formDataDraft.branch,
+          isRegistered: true,
+          isFileUploaded: false,
+          paymentStatus: "pending",
+          participantStatus: "pending"
+        };
+
+        saveParticipantToStorage(newParticipant);
+
+        document.getElementById("generated-reg-code").textContent = newRegCode;
+        multiForm.classList.add("hidden");
+        document.querySelector(".stepper-indicator").classList.add("hidden");
+        successScreen.classList.remove("hidden");
+
+        showToast("Pendaftaran kamu berhasil diterima!", "success");
+
+        document.getElementById("btn-copy-generated-code").onclick = () => {
+          copyToClipboard(newRegCode, "Kode pendaftaran berhasil disalin!");
+        };
+
+        document.getElementById("btn-success-check-status").onclick = () => {
+          closeModal();
+          resetRegistrationForm();
+          openCheckStatusWithCode(newRegCode);
+        };
+      });
+
+      function resetRegistrationForm() {
+        multiForm.reset();
+        multiForm.classList.remove("hidden");
+        document.querySelector(".stepper-indicator").classList.remove("hidden");
+        successScreen.classList.add("hidden");
+        currentStep = 1;
+        updateStepUI();
+      }
+    }
+
+    /* ====================================================================
+       8. FILE UPLOAD MODULE
+       ==================================================================== */
+    function initFileUploadModule() {
+      const dropzone = document.getElementById("upload-dropzone");
+      const fileInput = document.getElementById("file-input");
+      const btnBrowse = document.getElementById("btn-browse-file");
+      const fileInfoBox = document.getElementById("file-selected-info");
+      const fileNameDisplay = document.getElementById("file-name-display");
+      const fileSizeDisplay = document.getElementById("file-size-display");
+      const btnRemoveFile = document.getElementById("btn-remove-file");
+      const uploadForm = document.getElementById("file-upload-form");
+
+      let selectedFile = null;
+      const MAX_FILE_SIZE = 5 * 1024 * 1024; // 5 MB
+
+      btnBrowse.addEventListener("click", () => fileInput.click());
+      dropzone.addEventListener("click", (e) => {
+        if (e.target !== btnBrowse) fileInput.click();
+      });
+
+      ["dragenter", "dragover"].forEach(eventName => {
+        dropzone.addEventListener(eventName, (e) => {
+          e.preventDefault();
+          dropzone.classList.add("dragover");
+        });
+      });
+
+      ["dragleave", "drop"].forEach(eventName => {
+        dropzone.addEventListener(eventName, (e) => {
+          e.preventDefault();
+          dropzone.classList.remove("dragover");
+        });
+      });
+
+      dropzone.addEventListener("drop", (e) => {
+        const files = e.dataTransfer.files;
+        if (files.length > 0) handleFileSelection(files[0]);
+      });
+
+      fileInput.addEventListener("change", () => {
+        if (fileInput.files.length > 0) handleFileSelection(fileInput.files[0]);
+      });
+
+      function handleFileSelection(file) {
+        if (file.size > MAX_FILE_SIZE) {
+          showToast("Ukuran berkas melebihi batas maksimal 5 MB.", "error");
+          fileInput.value = "";
+          return;
+        }
+        selectedFile = file;
+        fileNameDisplay.textContent = file.name;
+        fileSizeDisplay.textContent = (file.size / 1024).toFixed(1) + " KB";
+        fileInfoBox.classList.remove("hidden");
+        showToast("Berkas siap dikirim.", "success");
+      }
+
+      btnRemoveFile.addEventListener("click", () => {
+        selectedFile = null;
+        fileInput.value = "";
+        fileInfoBox.classList.add("hidden");
+      });
+
+      uploadForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const regCodeInput = document.getElementById("upload-reg-code").value.trim().toUpperCase();
+
+        if (!regCodeInput) {
+          showToast("Silakan masukkan kode pendaftaran kamu.", "warning");
+          return;
+        }
+
+        if (!selectedFile) {
+          showToast("Pilih berkas terlebih dahulu sebelum mengirim.", "warning");
+          return;
+        }
+
+        const currentDb = getDatabase();
+        const participantIndex = currentDb.findIndex(p => p.registrationCode.toUpperCase() === regCodeInput);
+
+        if (participantIndex === -1) {
+          showToast("Kode pendaftaran tidak ditemukan. Mohon periksa kembali.", "error");
+          return;
+        }
+
+        /* Integrasi Backend: kirim file via FormData */
+        currentDb[participantIndex].isFileUploaded = true;
+        localStorage.setItem("lakmud_participants", JSON.stringify(currentDb));
+
+        showToast("Berkas berhasil dikirim dan siap diverifikasi oleh panitia!", "success");
+        
+        uploadForm.reset();
+        selectedFile = null;
+        fileInfoBox.classList.add("hidden");
+      });
+    }
+
+    /* ====================================================================
+       9. CEK DATAMU MODULE
+       ==================================================================== */
+    function initCheckDataModule() {
+      const tabCode = document.getElementById("tab-btn-code");
+      const tabWa = document.getElementById("tab-btn-wa");
+      const formCode = document.getElementById("form-check-code");
+      const formWa = document.getElementById("form-check-wa");
+      const resultBox = document.getElementById("check-result-box");
+
+      tabCode.addEventListener("click", () => {
+        tabCode.classList.add("active");
+        tabWa.classList.remove("active");
+        formCode.classList.remove("hidden");
+        formWa.classList.add("hidden");
+      });
+
+      tabWa.addEventListener("click", () => {
+        tabWa.classList.add("active");
+        tabCode.classList.remove("active");
+        formWa.classList.remove("hidden");
+        formCode.classList.add("hidden");
+      });
+
+      formCode.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const code = document.getElementById("input-search-code").value.trim().toUpperCase();
+        const currentDb = getDatabase();
+        const found = currentDb.find(p => p.registrationCode.toUpperCase() === code);
+
+        if (found) {
+          renderStatusResult(found);
+        } else {
+          resultBox.classList.remove("hidden");
+          resultBox.innerHTML = `
+            <div style="text-align: center; color: var(--status-red); padding: 10px;">
+              ✕ Data dengan kode <strong>${code}</strong> tidak ditemukan.<br>
+              <small style="color: var(--text-muted);">Pastikan kode yang kamu masukkan sudah benar.</small>
+            </div>
+          `;
+          showToast("Data tidak ditemukan.", "error");
+        }
+      });
+
+      formWa.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const wa = document.getElementById("input-search-wa").value.trim();
+        const dob = document.getElementById("input-search-dob").value;
+
+        if (!wa || !dob) {
+          showToast("Masukkan Nomor WhatsApp dan Tanggal Lahir.", "warning");
+          return;
+        }
+
+        const currentDb = getDatabase();
+        const found = currentDb.find(p => p.whatsapp === wa && p.dob === dob);
+
+        if (found) {
+          renderStatusResult(found);
+        } else {
+          resultBox.classList.remove("hidden");
+          resultBox.innerHTML = `
+            <div style="text-align: center; color: var(--status-red); padding: 10px;">
+              ✕ Data tidak ditemukan untuk WhatsApp dan Tanggal Lahir tersebut.
+            </div>
+          `;
+          showToast("Data tidak ditemukan.", "error");
+        }
+      });
+
+      function renderStatusResult(data) {
+        resultBox.classList.remove("hidden");
+        
+        const formatStatus = (status, customSuccessText = "Terverifikasi") => {
+          if (status === "verified" || status === true) {
+            return `<span class="status-badge badge-success">✓ ${customSuccessText}</span>`;
+          } else if (status === "pending") {
+            return `<span class="status-badge badge-warning">🟡 Menunggu Verifikasi</span>`;
+          } else {
+            return `<span class="status-badge badge-danger">🔴 Perlu Diperbaiki</span>`;
+          }
+        };
+
+        resultBox.innerHTML = `
+          <div class="result-header">
+            <span style="font-size: 1.2rem;">✓</span>
+            <div class="result-header-title">DATA PESERTA DITEMUKAN</div>
+          </div>
+          <div class="result-participant-info">
+            <div class="info-row"><span class="label">Nama:</span> <span class="val">${data.name}</span></div>
+            <div class="info-row"><span class="label">Sekolah/Delegasi:</span> <span class="val">${data.school} / ${data.branch || '-'}</span></div>
+            <div class="info-row"><span class="label">Kode Registrasi:</span> <span class="val" style="color: var(--primary-light); font-family: monospace;">${data.registrationCode}</span></div>
+          </div>
+
+          <div class="status-grid">
+            <div class="status-item">
+              <span>1. Formulir Pendaftaran</span>
+              ${formatStatus(data.isRegistered, "Sudah Terisi")}
+            </div>
+            <div class="status-item">
+              <span>2. Berkas Persyaratan</span>
+              ${formatStatus(data.isFileUploaded, "Sudah Dikirim")}
+            </div>
+            <div class="status-item">
+              <span>3. Administrasi</span>
+              ${formatStatus(data.paymentStatus)}
+            </div>
+            <div class="status-item">
+              <span>4. Status Kelolosan Peserta</span>
+              ${formatStatus(data.participantStatus, "Lolos Peserta")}
+            </div>
+          </div>
+        `;
+
+        showToast("Data pendaftaran berhasil ditemukan.", "success");
+      }
+    }
+
+    function openCheckStatusWithCode(code) {
+      const cardCheck = document.getElementById("card-check");
+      const toggleBtn = cardCheck.querySelector(".accordion-toggle");
+      const content = document.getElementById("content-check");
+
+      if (!cardCheck.classList.contains("open")) {
+        cardCheck.classList.add("open");
+        toggleBtn.setAttribute("aria-expanded", "true");
+        content.style.maxHeight = "600px";
+      }
+
+      document.getElementById("input-search-code").value = code;
+      document.getElementById("form-check-code").dispatchEvent(new Event("submit"));
+      cardCheck.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+
+    /* ====================================================================
+       10. FLOATING HELP BUTTON
+       ==================================================================== */
+    function initFloatingHelp() {
+      const btnToggle = document.getElementById("btn-toggle-help");
+      const helpPopup = document.getElementById("help-popup");
+      const btnCloseHelp = document.getElementById("btn-close-help");
+      const btnToggleFaq = document.getElementById("btn-open-faq-info");
+      const faqDrawer = document.getElementById("faq-content-drawer");
+
+      btnToggle.addEventListener("click", () => {
+        const isHidden = helpPopup.classList.contains("hidden");
+        helpPopup.classList.toggle("hidden", !isHidden);
+        btnToggle.setAttribute("aria-expanded", isHidden ? "true" : "false");
+      });
+
+      btnCloseHelp.addEventListener("click", () => {
+        helpPopup.classList.add("hidden");
+        btnToggle.setAttribute("aria-expanded", "false");
+      });
+
+      btnToggleFaq.addEventListener("click", () => {
+        faqDrawer.classList.toggle("hidden");
+      });
+    }
+  </script>
+</body>
+</html>
